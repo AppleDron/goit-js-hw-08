@@ -7,7 +7,7 @@ const player = new Player('vimeo-player');
 
 player.ready().then(() => {
   const timeUpdate = _.throttle(() => {
-    const currentTime = player.getCurrentTime();
+    const currentTime = JSON.stringify(player.getCurrentTime());
     localStorage.setItem('videoplayer-current-time', currentTime);
   }, 1000);
 
