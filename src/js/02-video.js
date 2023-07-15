@@ -7,7 +7,7 @@ const player = new Player('vimeo-player');
 
 valueTimeVideo();
 
-const onPlay = throttle(data => {
+const onPlay = _.throttle(data => {
   const valueTime = Math.round(data.seconds);
   localStorage.setItem('videoplayer-current-time', JSON.stringify(valueTime));
   console.log(valueTime);
