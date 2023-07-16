@@ -19,5 +19,5 @@ player.on('timeupdate', onPlay);
 
 function valueTimeVideo() {
   const valueVideo = localStorage.getItem(VIDEO_KEY);
-  player.setCurrentTime(valueVideo);
+  player.setCurrentTime(valueVideo || 0);
 }

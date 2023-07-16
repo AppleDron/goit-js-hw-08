@@ -11,10 +11,15 @@ formEl.addEventListener('submit', onSubmit);
 
 function onSubmit(event) {
   event.preventDefault();
+
+  const { email, message } = formEl;
+  if (!email.value || !message.value) {
+    return alert('Please fill all the inputs!');
+  }
   console.log(feedbackObj);
 
   event.currentTarget.reset();
-  localStorage.removeItem('feedback-form-state');
+  localStorage.removeItem(FORM_KEY);
 }
 
 function getInput(event) {
